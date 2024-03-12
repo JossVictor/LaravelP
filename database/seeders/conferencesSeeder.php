@@ -14,11 +14,11 @@ class conferencesSeeder extends Seeder
     public function run(): void
     {
         $conference = new conferences();
-        $conference->name = 'AFC';
+        $conference->name = "AFC";
         $conference->save();
 
         $conference = new conferences();
-        $conference->name = 'NFC';
+        $conference->name = "NFC";
         $conference->save();
     }
 }

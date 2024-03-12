@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\team;
+use App\Models\teams;
+use App\Models\cities;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +17,7 @@ class teamSeeder extends Seeder
         $team_name = new team();
         $team_name->name = 'Pittsburgh Steelers';
         $team_name->city = 'Pittsburgh';
-        $team_name->titles = 0;
+        $team_name->titles = 6;
         $team_name->logo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pittsburgh_Steelers_logo.svg/1200px-Pittsburgh_Steelers_logo.svg.png';
         $team_name->save();
 
