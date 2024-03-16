@@ -3,27 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Conferences;
 
-class ConferenceController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //es lo mismo que SELECT * FROM Conferences
-        //$conferences = Conferences::all();
-        $conferences = Conferences::all();
-        
-        //where('id', 1)-> get() //;
+        $cities = City::all();
 
-            //->select('id', 'conference_name', 'conc')
-            //->get();
+        //dd($cities);
 
-        dd($conferences);
-
-        return view('conferences.index', compact('conferences'));
+        return view('cities.index', compact('cities'));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConferenceController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::get('/', function () {
 });
 
 Route::resource('/conferences', ConferenceController::class);
+Route::resource('/teams', TeamController::class);
+Route::resource('/divisions', DivisionController::class);
+Route::resource('/cities', CityController::class);
 
 //Route::get('/conferences', function () {
 //    return view('conferences.index');

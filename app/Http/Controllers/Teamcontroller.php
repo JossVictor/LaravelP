@@ -3,27 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Conferences;
 
-class ConferenceController extends Controller
+class Teamcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //es lo mismo que SELECT * FROM Conferences
-        //$conferences = Conferences::all();
-        $conferences = Conferences::all();
+        $equipos = Team::join('conferences', 'conferneces.id', '=', 'team.conference_id')
         
-        //where('id', 1)-> get() //;
+            ->select('team.id', 'team.name', 'team.city', 'team.titles', 'team.logo', 'teams.division_id',
+            'conferences.conference_name')
+            ->get();
 
-            //->select('id', 'conference_name', 'conc')
-            //->get();
+        //dd($equipos);
 
-        dd($conferences);
-
-        return view('conferences.index', compact('conferences'));
+        return view('team.index', compact('equipos'));
     }
 
     /**
